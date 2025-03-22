@@ -1,0 +1,45 @@
+export interface Aeroporto {
+    name: string;
+    iataCode: string;
+}
+
+export const aeroportosLista: Aeroporto[] = [
+  { "name": "São Paulo/Guarulhos", "iataCode": "GRU" },
+  { "name": "Rio de Janeiro/Galeão", "iataCode": "GIG" },
+  { "name": "Brasília", "iataCode": "BSB" },
+  { "name": "Salvador", "iataCode": "SSA" },
+  { "name": "Fortaleza", "iataCode": "FOR" },
+  { "name": "Manaus", "iataCode": "MAO" },
+  { "name": "Recife", "iataCode": "REC" },
+  { "name": "Porto Alegre", "iataCode": "POA" },
+  { "name": "Curitiba/Afonso Pena", "iataCode": "CWB" },
+  { "name": "Belém/Val-de-Cães", "iataCode": "BEL" },
+  { "name": "Belo Horizonte/Confins", "iataCode": "CNF" },
+  { "name": "Campinas/Viracopos", "iataCode": "VCP" },
+  { "name": "Rio de Janeiro/Santos Dumont", "iataCode": "SDU" },
+  { "name": "São Paulo/Congonhas", "iataCode": "CGH" },
+  { "name": "Goiânia", "iataCode": "GYN" },
+  { "name": "Cuiabá", "iataCode": "CGB" },
+  { "name": "Florianópolis", "iataCode": "FLN" },
+  { "name": "Natal", "iataCode": "NAT" },
+  { "name": "Porto Velho", "iataCode": "PVH" },
+  { "name": "Campo Grande", "iataCode": "CGR" },
+  { "name": "João Pessoa", "iataCode": "JPA" },
+  { "name": "Maceió", "iataCode": "MCZ" },
+  { "name": "Teresina", "iataCode": "THE" },
+  { "name": "São Luís", "iataCode": "SLZ" },
+  { "name": "Palmas", "iataCode": "PMW" },
+  { "name": "Boa Vista", "iataCode": "BVB" },
+  { "name": "Macapá", "iataCode": "MCP" },
+  { "name": "Rio Branco", "iataCode": "RBR" },
+  { "name": "Aracaju", "iataCode": "AJU" },
+  { "name": "Vitória", "iataCode": "VIX" },
+  { "name": "Foz do Iguaçu", "iataCode": "IGU" },
+  { "name": "Navegantes", "iataCode": "NVT" },
+  { "name": "Uberlândia", "iataCode": "UDI" },
+  { "name": "Santarém", "iataCode": "STM" },
+  { "name": "Marabá", "iataCode": "MAB" },
+  { "name": "Altamira", "iataCode": "ATM" },
+  { "name": "Parauapebas", "iataCode": "CKS" },
+  { "name": "Imperatriz", "iataCode": "IMP" }
+]
