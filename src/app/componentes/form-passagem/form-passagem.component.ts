@@ -3,13 +3,18 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AutoComplete } from 'primeng/autocomplete';
 import { aeroportosLista, Aeroporto } from '../../model/aeroportos-lista';
+import { DatePickerModule } from 'primeng/datepicker';
+import { DividerModule } from 'primeng/divider';
+
 
 @Component({
   selector: 'app-form-passagem',
   imports: [
     FormsModule,
     AutoComplete,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DatePickerModule,
+    DividerModule
   ],
   templateUrl: './form-passagem.component.html',
   styleUrl: './form-passagem.component.css'

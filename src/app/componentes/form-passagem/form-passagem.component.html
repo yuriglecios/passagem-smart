@@ -1,8 +1,9 @@
 <div class="min-h-screen flex items-center justify-center bg-neutral-200">
-    <div class="max-w-lg mx-auto bg-white rounded-lg shadow-lg overflow-hidden h-150">
+    <div class="min-w-1xl mx-auto bg-white rounded-lg shadow-lg">
       <div class="p-6">
         <h2 class="text-2xl font-bold text-gray-800">Orçamento de Passagem</h2>
         <p class="text-gray-600">Adicione os detalhes da sua viagem e prossiga para o orçamento.</p>
+        <p-divider />
 
         <form [formGroup]="passagemForm" action="">
             <div class="flex space-x-4 mt-4">
@@ -32,7 +33,28 @@
                     </p-autoComplete>
                 </div>
             </div>
-            <div class="mt-6">
+            <div class="flex space-x-4 mt-4">
+                <div class="mt-4">
+                    <label for="dataIda" class="mb-1 block text-lg font-semibold text-gray-800">Data Ida</label>
+                    <p-datePicker
+                    formControlName="dataIda"
+                    placeholder="Selecione a data"
+                    [showIcon]="false"
+                    dateFormat="dd/mm/yyyy"
+                    ></p-datePicker>
+                </div>
+                <div class="mt-4">
+                    <label for="dataVolta" class="mb-1 block text-lg font-semibold text-gray-800">Data Volta</label>
+                    <p-datePicker
+                    formControlName="dataVolta"
+                    placeholder="Selecione a data"
+                    [showIcon]="false"
+                    dateFormat="dd/mm/yyyy"
+                    ></p-datePicker>
+                </div>
+            </div>
+            <div class="mt-6
+            ">
                 <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="onSubmit()">
                     Buscar Passagens
                 </button>
