@@ -61,7 +61,12 @@
                     optionLabel="label" 
                     optionValue="value" />
                 </div>
+                <div class="mt-4">
+                    <label for="passageiroAdulto" class="mb-1 block text-lg font-semibold text-gray-800">Adultos</label>
+                    <p-select [options]="passageiroAdulto" formControlName="adultos" optionLabel="label" />
+                </div>
             </div>
+            
             <div class="mt-6
             ">
                 <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="onSubmit()">
