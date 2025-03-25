@@ -35,6 +35,9 @@ export class FormPassagemComponent {
     { label: 'Ida', value: 'Ida' },
     { label: 'Ida-Volta', value: 'Ida-Volta' }
   ];
+  passageiroAdulto: Passageiro[] = passageiroLista;
+  passageiroCrianca: Passageiro[] = passageiroLista;
+  passageiroBabe: Passageiro[] = passageiroLista;
 
   searchOrigem(event: { query: string }) {  
     this.filtroAeroportosOrigem = this.aeroportos.filter(aeroporto =>
