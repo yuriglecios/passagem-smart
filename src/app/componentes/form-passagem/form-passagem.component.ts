@@ -7,6 +7,7 @@ import { DatePickerModule } from 'primeng/datepicker';
 import { DividerModule } from 'primeng/divider';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { SelectModule } from 'primeng/select';
+import { passageiroLista, Passageiro } from '../../model/passageiro-lista';
 
 
 @Component({
