@@ -6,6 +6,7 @@ import { aeroportosLista, Aeroporto } from '../../model/aeroportos-lista';
 import { DatePickerModule } from 'primeng/datepicker';
 import { DividerModule } from 'primeng/divider';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import { SelectModule } from 'primeng/select';
 
 
 @Component({
@@ -16,7 +17,8 @@ import { SelectButtonModule } from 'primeng/selectbutton';
     ReactiveFormsModule,
     DatePickerModule,
     DividerModule,
-    SelectButtonModule
+    SelectButtonModule,
+    SelectModule
   ],
   templateUrl: './form-passagem.component.html',
   styleUrl: './form-passagem.component.css'
