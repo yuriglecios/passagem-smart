@@ -5,6 +5,7 @@ import { AutoComplete } from 'primeng/autocomplete';
 import { aeroportosLista, Aeroporto } from '../../model/aeroportos-lista';
 import { DatePickerModule } from 'primeng/datepicker';
 import { DividerModule } from 'primeng/divider';
+import { SelectButtonModule } from 'primeng/selectbutton';
 
 
 @Component({
@@ -14,7 +15,8 @@ import { DividerModule } from 'primeng/divider';
     AutoComplete,
     ReactiveFormsModule,
     DatePickerModule,
-    DividerModule
+    DividerModule,
+    SelectButtonModule
   ],
   templateUrl: './form-passagem.component.html',
   styleUrl: './form-passagem.component.css'
@@ -26,6 +28,10 @@ export class FormPassagemComponent {
   filtroAeroportosDestino: Aeroporto[] = [];
   origemValue: any;
   destinoValue: any;
+  stateOptions: any[] = [
+    { label: 'Ida', value: 'Ida' },
+    { label: 'Ida-Volta', value: 'Ida-Volta' }
+  ];
 
   searchOrigem(event: { query: string }) {  
     this.filtroAeroportosOrigem = this.aeroportos.filter(aeroporto =>
