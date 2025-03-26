@@ -10,12 +10,28 @@
 
                 <div class="flex space-x-4 mt-4">
                     <!-- componentes de tipo de passagem -->
-                    <div class="mt-4">
+                    <div class="mt-12">
                         <p-selectbutton 
                         [options]="stateOptions" 
                         formControlName="tipoPassagem" 
                         optionLabel="label" 
                         optionValue="value" />
+                    </div>
+
+                    <!-- componentes de passageiros -->
+                    <div class="mt-4">
+                        <label for="passageiroAdulto" class="mb-1 block text-lg font-semibold text-gray-800">Adultos</label>
+                        <p-select [options]="passageiroAdulto" formControlName="adultos" optionLabel="label" />
+                    </div>
+
+                    <div class="mt-4">
+                        <label for="passageiroCrianca" class="mb-1 block text-lg font-semibold text-gray-800">Crianças</label>
+                        <p-select [options]="passageiroCrianca" formControlName="criancas" optionLabel="label" />
+                    </div>
+
+                    <div class="mt-4">
+                        <label for="passageiroBebes" class="mb-1 block text-lg font-semibold text-gray-800">Bebes</label>
+                        <p-select [options]="passageiroBabe" formControlName="bebes" optionLabel="label" />
                     </div>
 
                 </div>
@@ -71,25 +87,6 @@
                         [showIcon]="false"
                         dateFormat="dd/mm/yyyy"
                         ></p-datePicker>
-                    </div>
-
-                </div>
-
-                <div class="flex space-x-4">
-                    <!-- componentes de passageiros -->
-                    <div class="mt-4">
-                        <label for="passageiroAdulto" class="mb-1 block text-lg font-semibold text-gray-800">Adultos</label>
-                        <p-select [options]="passageiroAdulto" formControlName="adultos" optionLabel="label" />
-                    </div>
-
-                    <div class="mt-4">
-                        <label for="passageiroCrianca" class="mb-1 block text-lg font-semibold text-gray-800">Crianças</label>
-                        <p-select [options]="passageiroCrianca" formControlName="criancas" optionLabel="label" />
-                    </div>
-
-                    <div class="mt-4">
-                        <label for="passageiroBebes" class="mb-1 block text-lg font-semibold text-gray-800">Bebes</label>
-                        <p-select [options]="passageiroBabe" formControlName="bebes" optionLabel="label" />
                     </div>
 
                 </div>
