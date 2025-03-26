@@ -9,6 +9,7 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { SelectModule } from 'primeng/select';
 import { passageiroLista, Passageiro } from '../../model/passageiro-lista';
 import { airlineLista, Airline } from '../../model/airline-lista';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 
 @Component({
@@ -20,7 +21,8 @@ import { airlineLista, Airline } from '../../model/airline-lista';
     DatePickerModule,
     DividerModule,
     SelectButtonModule,
-    SelectModule
+    SelectModule,
+    InputNumberModule
   ],
   templateUrl: './form-passagem.component.html',
   styleUrl: './form-passagem.component.css'
