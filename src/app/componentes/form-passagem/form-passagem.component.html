@@ -1,82 +1,83 @@
 <div class="min-h-screen flex items-center justify-center bg-neutral-200">
     <!-- card de conteúdo -->
     <div class="min-w-1xl mx-auto bg-white rounded-lg shadow-lg">
-      <div class="p-6">
-        <h2 class="text-2xl font-bold text-gray-800">Orçamento de Passagem</h2>
-        <p class="text-gray-600">Adicione os detalhes da sua viagem e prossiga para o orçamento.</p>
-        <p-divider />
+        <div class="p-6">
+          <h2 class="text-2xl font-bold text-gray-800">Orçamento de Passagem</h2>
+          <p class="text-gray-600">Adicione os detalhes da sua viagem e prossiga para o orçamento.</p>
+          <p-divider />
 
-        <form [formGroup]="passagemForm" action="">
-            <div class="flex space-x-4 mt-4">
-                <div class="mt-4">
-                    <label for="origem" class="mb-1 block text-lg font-semibold text-gray-800">Origem</label>
-                    <p-autoComplete 
-                    [(ngModel)]="origemValue" 
-                    formControlName="origem"
-                    [suggestions]="filtroAeroportosOrigem" 
-                    (completeMethod)="searchOrigem($event)" 
-                    field="name" 
-                    [dropdown]="false" 
-                    placeholder="Digite o nome ou código IATA do aeroporto">
-                    </p-autoComplete>
+            <form [formGroup]="passagemForm" action="">
+                <!-- componentes de destino e origem -->
+                <div class="flex space-x-4 mt-4">
+                    <div class="mt-4">
+                        <label for="origem" class="mb-1 block text-lg font-semibold text-gray-800">Origem</label>
+                        <p-autoComplete 
+                        [(ngModel)]="origemValue" 
+                        formControlName="origem"
+                        [suggestions]="filtroAeroportosOrigem" 
+                        (completeMethod)="searchOrigem($event)" 
+                        field="name" 
+                        [dropdown]="false" 
+                        placeholder="Digite o nome ou código IATA do aeroporto">
+                        </p-autoComplete>
+                    </div>
+                  
+                    <div class="mt-4">
+                        <label for="destino" class="mb-1 block text-lg font-semibold text-gray-800">Destino</label>
+                        <p-autoComplete 
+                        [(ngModel)]="destinoValue" 
+                        formControlName="destino"
+                        [suggestions]="filtroAeroportosDestino" 
+                        (completeMethod)="searchDestino($event)" 
+                        field="name" 
+                        [dropdown]="false" 
+                        placeholder="Digite o nome ou código IATA do aeroporto">
+                        </p-autoComplete>
+                    </div>
+                </div>
+                <div class="flex space-x-4 mt-4">
+                    <div class="mt-4">
+                        <label for="dataIda" class="mb-1 block text-lg font-semibold text-gray-800">Data Ida</label>
+                        <p-datePicker
+                        formControlName="dataIda"
+                        placeholder="Selecione a data"
+                        [showIcon]="false"
+                        dateFormat="dd/mm/yyyy"
+                        ></p-datePicker>
+                    </div>
+                    <div class="mt-4">
+                        <label for="dataVolta" class="mb-1 block text-lg font-semibold text-gray-800">Data Volta</label>
+                        <p-datePicker
+                        formControlName="dataVolta"
+                        placeholder="Selecione a data"
+                        [showIcon]="false"
+                        dateFormat="dd/mm/yyyy"
+                        ></p-datePicker>
+                    </div>
+                </div>
+                <div class="flex space-x-4 mt-4">
+                    <div class="mt-4">
+                        <p-selectbutton 
+                        [options]="stateOptions" 
+                        formControlName="tipoPassagem" 
+                        optionLabel="label" 
+                        optionValue="value" />
+                    </div>
+                    <div class="mt-4">
+                        <label for="passageiroAdulto" class="mb-1 block text-lg font-semibold text-gray-800">Adultos</label>
+                        <p-select [options]="passageiroAdulto" formControlName="adultos" optionLabel="label" />
+                    </div>
                 </div>
 
-                <div class="mt-4">
-                    <label for="destino" class="mb-1 block text-lg font-semibold text-gray-800">Destino</label>
-                    <p-autoComplete 
-                    [(ngModel)]="destinoValue" 
-                    formControlName="destino"
-                    [suggestions]="filtroAeroportosDestino" 
-                    (completeMethod)="searchDestino($event)" 
-                    field="name" 
-                    [dropdown]="false" 
-                    placeholder="Digite o nome ou código IATA do aeroporto">
-                    </p-autoComplete>
+                <div class="mt-6
+                ">
+                    <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="onSubmit()">
+                        Buscar Passagens
+                    </button>
                 </div>
-            </div>
-            <div class="flex space-x-4 mt-4">
-                <div class="mt-4">
-                    <label for="dataIda" class="mb-1 block text-lg font-semibold text-gray-800">Data Ida</label>
-                    <p-datePicker
-                    formControlName="dataIda"
-                    placeholder="Selecione a data"
-                    [showIcon]="false"
-                    dateFormat="dd/mm/yyyy"
-                    ></p-datePicker>
-                </div>
-                <div class="mt-4">
-                    <label for="dataVolta" class="mb-1 block text-lg font-semibold text-gray-800">Data Volta</label>
-                    <p-datePicker
-                    formControlName="dataVolta"
-                    placeholder="Selecione a data"
-                    [showIcon]="false"
-                    dateFormat="dd/mm/yyyy"
-                    ></p-datePicker>
-                </div>
-            </div>
-            <div class="flex space-x-4 mt-4">
-                <div class="mt-4">
-                    <p-selectbutton 
-                    [options]="stateOptions" 
-                    formControlName="tipoPassagem" 
-                    optionLabel="label" 
-                    optionValue="value" />
-                </div>
-                <div class="mt-4">
-                    <label for="passageiroAdulto" class="mb-1 block text-lg font-semibold text-gray-800">Adultos</label>
-                    <p-select [options]="passageiroAdulto" formControlName="adultos" optionLabel="label" />
-                </div>
-            </div>
-            
-            <div class="mt-6
-            ">
-                <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="onSubmit()">
-                    Buscar Passagens
-                </button>
-            </div>
-        </form>
-        
-      </div>
+            </form>
+
+        </div>
     </div>
   </div>
   
