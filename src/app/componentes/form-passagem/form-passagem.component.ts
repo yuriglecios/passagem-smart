@@ -8,6 +8,7 @@ import { DividerModule } from 'primeng/divider';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { SelectModule } from 'primeng/select';
 import { passageiroLista, Passageiro } from '../../model/passageiro-lista';
+import { airlineLista, Airline } from '../../model/airline-lista';
 
 
 @Component({
@@ -38,6 +39,7 @@ export class FormPassagemComponent {
   passageiroAdulto: Passageiro[] = passageiroLista;
   passageiroCrianca: Passageiro[] = passageiroLista;
   passageiroBabe: Passageiro[] = passageiroLista;
+  airlines: Airline[] = airlineLista;
 
   searchOrigem(event: { query: string }) {  
     this.filtroAeroportosOrigem = this.aeroportos.filter(aeroporto =>
