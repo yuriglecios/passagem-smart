@@ -6,6 +6,20 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class OrcamentoService {
+  private passagemForm: FormGroup | null = null;
+
+  setPassagemForm(form: FormGroup) {
+    this.passagemForm = form;
+  }
+
+  getPassagemForm(): FormGroup | null {
+    return this.passagemForm;
+  }
 
   constructor(private router: Router) { }
+
+  gerarOrcamento(form: FormGroup) {
+    this.setPassagemForm(form);
+    this.router.navigate(['/orcamento']);
+  }
 }
