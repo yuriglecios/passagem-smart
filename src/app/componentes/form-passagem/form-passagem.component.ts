@@ -10,6 +10,7 @@ import { SelectModule } from 'primeng/select';
 import { passageiroLista, Passageiro } from '../../model/passageiro-lista';
 import { airlineLista, Airline } from '../../model/airline-lista';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { OrcamentoService } from '../../services/orcamento.service';
 
 
 @Component({
@@ -56,7 +57,9 @@ export class FormPassagemComponent {
     );
   }
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder, 
+    private orcamentoService: OrcamentoService) {
     this.passagemForm = this.fb.group({
       origem: [''],
       destino: [''],
@@ -74,10 +77,9 @@ export class FormPassagemComponent {
 
   onSubmit() {
     if (this.passagemForm.valid) {
-        console.log('Valores do formulário:', this.passagemForm.value);
-        // Aqui você faria a lógica para buscar as passagens com os dados do formulário
+      this.orcamentoService.gerarOrcamento(this.passagemForm);
     } else {
-        // Lógica para exibir erros de validação
+      console.log('Formulário inválido');
     }
 }
 
